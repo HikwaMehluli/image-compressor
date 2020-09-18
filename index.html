@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple and fast Digital Image Compression tool.">
+    <meta name="author" content="Mehluli Hikwa">
+    <meta name="theme-color" content="#3b7fff">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./img/logo.png">
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <h1>Image Compressor <span>v1.0.0</span></h1>
+            <h2>Simple and fast "Digital Image Compression" tool</h2>
+        </div>
+    </header>
+    
+    <main>
+        <article id="app">
+            <!-- FIXME: Wont upload or makes mobile and Ipad browser crush -->
+            <section class="content" id="hideUpload" @change="change" @dragover="dragover" @drop="drop">
+                <div class="upload">
+                    <p>Drop Image Here or Choose a File</p>
+                    <input type="file" id="file" class="inputfile" accept="image/*;capture=camera" ref="input">
+                    <label for="file">
+                        <figure>
+                            <svg viewBox="0 0 20 17">
+                                <path
+                                    d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" />
+                            </svg>
+                        </figure>
+                    </label>
+                </div>
+            </section>
+
+            <section class="content output">
+                <div class="half column">
+                    <div v-if="inputURL">
+                        <img :src="inputURL" :alt="input.name">
+                    </div>
+                </div>
+                <div class="half column">
+                    <div v-if="outputURL">
+                        <div class="image-reduction">
+                            <p>File Name: {{ output.name || ' ' }}</p>
+                            <p>Original size: {{ input.size | prettySize }}</p>
+                            <p>Converted size: {{ output.size | prettySize }}</p>
+                        </div>
+                        <div class="button">
+                            <a :download="output.name" :href="outputURL" title="Download the compressed image">Download</a>
+                        </div>
+                        <br>
+                        <p><a href="">Convert Another Image</a></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    
+    <script src="js/vue.min.js"></script>
+    <script src="js/image-compressor.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
