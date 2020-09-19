@@ -8,7 +8,9 @@
 	"scripts": {
 		"start": "electron .",
 		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/style.css --style compressed",
-    	"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/style.css",
+		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/style.css",
+		"js-prod": "webpack --mode production",
+		"js-dev": "webpack --mode development --watch",
 		"windows": "electron-packager . app --platform win32 --arch x64 --out dist/",
 		"windows-exe": "electron-installer-windows --src dist/app-win32-x64/ --dest dist/installers/",
 		"package-win": "electron-packager . image-compressor --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=dist --version-string.CompanyName=thatAfro --version-string.FileDescription=CE --version-string.ProductName=\"ImageCompressor\"",
