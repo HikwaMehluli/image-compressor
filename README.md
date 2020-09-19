@@ -18,11 +18,13 @@ Electron Packager - https://github.com/electron/electron-packager
 
 
 ### Usage
-
-The app has only been tested on Windows machines thus far.
+*This app has only been tested on Windows*
 
 1 - Clone or Download Repo
 2 - run "npm start" to start the desktop app in dev mode
 
 
 ### Build Desktop Installable App
+Windows - npm windows-exe
+
+2 - run "npm start" to start the desktop app in dev mode
