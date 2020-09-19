@@ -26,5 +26,5 @@ Electron Packager - https://github.com/electron/electron-packager
 
 ### Build Desktop Installable App
 Windows - npm windows-exe
-
-2 - run "npm start" to start the desktop app in dev mode
+Mac - npm package-mac
+Linux - package-linux
