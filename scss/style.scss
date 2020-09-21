@@ -39,7 +39,7 @@ img {
 }
 
 a {
-    color: #004ee2;
+    color: #0c61ff;
     text-decoration: none;
 }
 
@@ -59,16 +59,16 @@ a {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
+    
     &:hover {
-        background: #004ee2;
+        background: #0c61ff;
     }
 }
 
 
-
 // SECTIONS
 header {
-    background: #3b7fff url('../img/header-bg.png');
+    background: #0c61ff url('../img/header-bg.png');
     color: white;
     padding: 3% 0;
 
@@ -117,7 +117,6 @@ p {
 
 
 // UPLOAD FILE
-        
 .upload {
     background-color: #f4f4f4;
     padding: 20px 0 0 0;
@@ -153,17 +152,26 @@ input {
     right: 0;
     bottom: 0;
     left: 0;
-}
 
-.inputfile+label figure {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #3b7fff;
-    display: block;
-    padding: 20px;
-    margin: 0 auto;
-    transition: all .5s;
+    figure {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #3b7fff;
+        display: block;
+        padding: 20px;
+        margin: 0 auto;
+        transition: all .5s;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: white;
+        vertical-align: middle;
+        margin-top: -4px;
+        margin-right: 4px;
+    }
 }
 
 .inputfile:focus+label figure,
@@ -171,14 +179,6 @@ input {
     background-color: #6a7c9f;
 }
 
-.inputfile+label svg {
-    width: 100%;
-    height: 100%;
-    fill: white;
-    vertical-align: middle;
-    margin-top: -4px;
-    margin-right: 4px;
-}
 
 /**************************************
         RESPONSIVE FRAMEWORK
@@ -194,12 +194,12 @@ main {
     margin: 0 auto;
     box-sizing: border-box;
     clear: both;
-}
 
-.content:after {
-    content: "";
-    display: table;
-    clear: both;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 .column {
@@ -212,12 +212,12 @@ main {
 @media(min-width: 769px) {
     .column {
         margin-left: 3%;
-    }
 
-    .column:first-child {
-        margin-left: 0;
+        &:first-child {
+            margin-left: 0;
+        }
     }
-
+    
     .quarter {
         width: 22.75%;
     }
