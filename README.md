@@ -1,6 +1,8 @@
 # Image Compressor
 *Desktop Based - Simple and fast "Digital Image Compression" tool*
 
+[View Demo](https://hikwamehluli.github.io/image-compressor)
+
 
 ### Dev Dependencies
 
