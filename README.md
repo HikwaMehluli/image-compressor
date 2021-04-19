@@ -5,7 +5,6 @@
 
 
 ### Dev Dependencies
-
 Image Compressor v1.1.3 - https://github.com/xkeshi/image-compressor
 
 Vue.js v2.5.16 - https://vuejs.org/
