@@ -9,63 +9,76 @@ MacOS and Linux packages coming soon.
 #
 ## Table of contents
 
-- [Main](#main)
-- [Getting started](#getting-started)
-- [Options](#options)
-- [Methods](#methods)
-- [No conflict](#no-conflict)
-- [Browser support](#browser-support)
-- [Contributing](#contributing)
-- [Versioning](#versioning)
+- [Creating Builds](#creating-builds)
+- [Development Dependencies](#development-dependencies)
 - [License](#license)
 
 #
-## Main
-*This app has only been tested on Windows*
-
-+ Clone or Download Repo
-+ run "npm start" to start the desktop app in dev mode
-
 ## Build desktop installable app
-*Open terminal in your IDE and run the script for the operating system you need*
 
-### Windows (32/64 bit)
-#### Dev dependencies for Windows Insatller
-```
-npm i electron-winstaller --save-dev
-```
-
-#### Build Windows app - which will then be placed in a folder called "release-builds"
-```
-npm windows-app
-```
-
-macOS
-```
-npm macOS-app
-```
 
 # 
-# Developers
+## Creating Builds
+<br>
 
-## Dev dependencies for the UI Design
+### Package & Build Windows (32bit) App
+*Open CMD or terminal in your IDE and run the script below*
+<br>
+
+```
+npm package-win
+```
+
+After running the script the output folder should look like this.
+```text
+release-builds/
+    |
+    └── image-compressor-win32-ia32
+```
+This folder is a portable version of the offline image compression tool for Windows computers.
+
+Next Step - Creating an installable version of the app. Run the script below.
+```
+npm create-installer-win
+```
+
+Your folder structure should look like this if successful
+```
+release-builds/
+    ├── image-compressor-win32-ia32
+    └── windows-installer
+```
+
+[⬆ back to top](#table-of-contents)
+
+# 
+## Development Dependencies
+
+### UI Design - SASS
 ```
 npm i sass --save-dev
 ```
 
-## Supporting scripts for UX Design
-+ Vue.js - https://vuejs.org/
-+ Web font is Roboto - https://fonts.google.com/specimen/Roboto
-
-## Dev dependencies for packaging Desktop App
+### For packaging desktop apps
 ```
 npm i electron electron-packager --save-dev
 ```
 
-## Managing desktop shortcuts & uninstall
+### For creating a Windows executable(.exe) file
+```
+npm i electron-winstaller --save-dev
+```
+
+### For managing desktop shortcuts & uninstall
 ```
 npm i electron-squirrel-startup
 ```
+
+### Supporting scripts for UX Design
++ Vue.js - https://vuejs.org/
++ Web font is Roboto - https://fonts.google.com/specimen/Roboto
+
+[⬆ back to top](#table-of-contents)
 
 #
 ## License
