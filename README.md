@@ -14,14 +14,14 @@ ___
 ## Build desktop installable app
 *Open terminal in your IDE and run the script for the operating system you need*
 
-Windows OS
+Windows (32/64 bit)
 ```
-npm windows-exe
+npm windows-app
 ```
 
-Apple Mac iOS
+macOS
 ```
-npm package-mac
+npm macOS-app
 ```
 
 ___
@@ -35,7 +35,7 @@ npm i sass webpack webpack-cli --save-dev
 ## Dev dependencies for packaging Desktop App
 Install Electron, Electron Packager
 ```
-npm i electron electron-packager sass webpack webpack-cli --save-dev
+npm i electron electron-packager --save-dev
 ```
 
 ## Supporting scripts for UX Design
