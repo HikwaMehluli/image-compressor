@@ -40,5 +40,6 @@ Thumbs.db
 
 # Ignore these while in development #
 ######################
-/release-builds
+/dist
 /installers
+/dist

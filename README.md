@@ -25,7 +25,7 @@ npm package-win
 
 After running the script the output folder should look like this.
 ```text
-release-builds/
+dist/
     |
     └── image-compressor-win32-ia32
 ```
@@ -38,7 +38,7 @@ npm create-installer-win
 
 Your folder structure should look like this if successful. And the "windows-intaller" folder is your offline app.
 ```
-release-builds/
+dist/
     ├── image-compressor-win32-ia32
     └── windows-installer
 ```
