@@ -27,13 +27,13 @@ npm macOS-app
 ___
 
 ## Dev dependencies for the UI Design
-Install SASS, Webpack & Webpack CLI
+### Install SASS, Webpack & Webpack CLI
 ```
 npm i sass webpack webpack-cli --save-dev
 ```
 
 ## Dev dependencies for packaging Desktop App
-Install Electron, Electron Packager
+### Install Electron, Electron Packager
 ```
 npm i electron electron-packager --save-dev
 ```
