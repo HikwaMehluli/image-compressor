@@ -13,7 +13,6 @@ MacOS and Linux packages coming soon.
 - [Development Dependencies](#development-dependencies)
 - [License](#license)
 
-
 # 
 ## Creating Builds
 ### Windows (32bit) - Package & Build
