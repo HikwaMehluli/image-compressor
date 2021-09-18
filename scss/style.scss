@@ -44,7 +44,7 @@ a {
 }
 
 .button a {
-    background: #0a5fff;
+    background: #0c61ff;
     cursor: pointer;
     color: white;
     display: inline-block;
@@ -61,7 +61,7 @@ a {
     transition: all 0.5s;
     
     &:hover {
-        background: #0c61ff;
+        background: #0d4dc4;
     }
 }
 
@@ -86,12 +86,6 @@ header {
         font-size: 2rem;
         font-weight: 300;
     }
-
-    h3 {
-        font-size: 1.8rem;
-        font-weight: 500;
-        padding: 2% 0;
-    }
 }
 
 p {
@@ -115,9 +109,7 @@ p {
     margin-bottom: 20px;
 }
 
-
-// UPLOAD FILE
-.upload {
+.upload-section {
     background-color: #f4f4f4;
     padding: 20px 0 0 0;
     height: 200px;
@@ -130,54 +122,58 @@ p {
 
     p {
         color: #004ee2;
-        font-weight: 500;
+        font-weight: 700;
         text-align: center;
     }
-}
 
-/* Hide deafult input button */
-input {
-    visibility: hidden;
-}
+    /* Hide deafult input button */
+    input {
+        visibility: hidden;
+    }
 
-.inputfile+label {
-    color: black;
-    cursor: pointer;
-    display: inline-block;
+    // Custom input button
+    .inputfile+label {
+        color: black;
+        cursor: pointer;
+        display: inline-block;
 
-    /* centering icon */
-    position: absolute;
-    margin: 0 auto;
-    top: 70px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    figure {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: #3b7fff;
-        display: block;
-        padding: 20px;
+        /* centering icon */
+        position: absolute;
         margin: 0 auto;
-        transition: all .5s;
+        top: 70px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        figure {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #3b7fff;
+            display: block;
+            padding: 20px;
+            margin: 0 auto;
+            transition: all .5s;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+            vertical-align: middle;
+            margin-top: -4px;
+            margin-right: 4px;
+        }
     }
 
-    svg {
-        width: 100%;
-        height: 100%;
-        fill: white;
-        vertical-align: middle;
-        margin-top: -4px;
-        margin-right: 4px;
+    .inputfile:focus+label figure,
+    .inputfile+label:hover figure {
+        background-color: #6a7c9f;
     }
 }
 
-.inputfile:focus+label figure,
-.inputfile+label:hover figure {
-    background-color: #6a7c9f;
-}
+
+
 
 
 /**************************************
@@ -216,14 +212,6 @@ main {
         &:first-child {
             margin-left: 0;
         }
-    }
-    
-    .quarter {
-        width: 22.75%;
-    }
-
-    .three-quarters {
-        width: 77.25%;
     }
 
     .third {

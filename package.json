@@ -6,8 +6,8 @@
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
-		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/app.css --style compressed",
-		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/app.css",
+		"css-prod": "sass --no-source-map --watch scss/style.scss:css/app.css --style compressed",
+		"css-dev": "sass --no-source-map --watch scss/style.scss:css/app.css",
 
 		"package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
 		"package-linux": "electron-packager . image-compressor --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/512x512.png --prune=true --out=release-builds",
