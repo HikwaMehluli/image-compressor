@@ -13,9 +13,6 @@ MacOS and Linux packages coming soon.
 - [Development Dependencies](#development-dependencies)
 - [License](#license)
 
-#
-## Build desktop installable app
-
 
 # 
 ## Creating Builds
