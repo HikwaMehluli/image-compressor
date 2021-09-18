@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-        // File size beffore printing
+        // File size before printing
         filters: {
             prettySize: function (size) {
                 var kilobyte = 1024;
