@@ -1,9 +1,9 @@
 
 /*!
- * Image Compressor v1.0.2
+ * Image Compressor
  * https://github.com/HikwaMehluli/image-compressor
  *
- * Copyright (c) 2018-2020 HikwaMehluli
+ * Copyright (c) 2020 Hikwa Mehluli
  * Released under the MIT license
  *
  */

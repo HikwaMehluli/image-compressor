@@ -11,5 +11,6 @@
 		"windows-app": "electron-packager . image-compressor --overwrite --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --out=dist/",
 		"macOS-app": "electron-packager . image-compressor --overwrite --platform=darwin --arch=x64 --icon=assets/icons/win/icon.ico --out=dist/",
 		"linux-app": "electron-packager . image-compressor --overwrite --platform=linux --arch=x64 --icon=assets/icons/win/icon.ico --out=dist/"
-	}
+	},
+	"devDependencies": {}
 }
