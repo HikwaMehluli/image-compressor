@@ -40,7 +40,5 @@ Thumbs.db
 
 # Ignore these while in development #
 ######################
-README.md
 /release-builds
 /installers
-z_TODO.html
