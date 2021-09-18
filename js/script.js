@@ -3,7 +3,7 @@
  * Image Compressor
  * https://github.com/HikwaMehluli/image-compressor
  *
- * Copyright (c) 2020 Hikwa Mehluli
+ * Copyright (c) 2018-present Hikwa Mehluli
  * Released under the MIT license
  *
  */
@@ -49,7 +49,9 @@ window.addEventListener('DOMContentLoaded', function () {
             };
         },
 
-        // FILE SIZE BEFORE PRINT
+
+
+        // File size beffore printing
         filters: {
             prettySize: function (size) {
                 var kilobyte = 1024;
@@ -98,7 +100,9 @@ window.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    // DETECT FILE INPUT SUPPORT 
+
+
+    // Detect file input support 
     var isFileInputSupported = (function () {
 
         // Handle devices which falsely report support
