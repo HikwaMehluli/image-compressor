@@ -16,9 +16,7 @@ MacOS and Linux packages coming soon.
 
 # 
 ## Creating Builds
-<br>
-
-### Package & Build Windows (32bit) App
+### Windows (32bit) - Package & Build
 *Open CMD or terminal in your IDE and run the script below*
 <br>
 
@@ -39,7 +37,7 @@ Next Step - Creating an installable version of the app. Run the script below.
 npm create-installer-win
 ```
 
-Your folder structure should look like this if successful
+Your folder structure should look like this if successful. And the "windows-intaller" folder is your offline app.
 ```
 release-builds/
     ├── image-compressor-win32-ia32
