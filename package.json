@@ -1,11 +1,12 @@
 {
 	"name": "image-compressor",
-	"version": "1.0.2",
+	"version": "1.0.5",
 	"description": "Simple Image Compression Tool",
 	"author": "thatAfro",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
+
 		"css-prod": "sass --no-source-map --watch scss/style.scss:css/app.css --style compressed",
 		"css-dev": "sass --no-source-map --watch scss/style.scss:css/app.css",
 
@@ -20,8 +21,5 @@
 		"electron": "^14.0.1",
 		"electron-packager": "^15.4.0",
 		"electron-winstaller": "^5.0.0"
-	},
-	"dependencies": {
-		"electron-squirrel-startup": "^1.0.0"
 	}
 }

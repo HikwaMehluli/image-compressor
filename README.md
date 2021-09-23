@@ -9,11 +9,11 @@ MacOS and Linux packages coming soon.
 #
 ## Table of contents
 
-- [Creating Builds](#creating-builds)
+<!-- - [Creating Builds](#creating-builds) -->
 - [Development Dependencies](#development-dependencies)
 - [License](#license)
 
-# 
+<!-- # 
 ## Creating Builds
 ### Windows (32bit) - Package & Build
 *Open CMD or terminal in your IDE and run the script below*
@@ -43,7 +43,7 @@ dist/
     └── windows-installer
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ back to top](#table-of-contents) -->
 
 # 
 ## Development Dependencies
@@ -53,9 +53,14 @@ dist/
 npm i sass --save-dev
 ```
 
-### For packaging desktop apps
+<!-- ### For creating indepent desktop app
 ```
-npm i electron electron-packager --save-dev
+npm i electron --save-dev
+```
+
+### For packaging desktop app
+```
+npm i electron-packager --save-dev
 ```
 
 ### For creating a Windows executable(.exe) file
@@ -66,7 +71,7 @@ npm i electron-winstaller --save-dev
 ### For managing desktop shortcuts & uninstall
 ```
 npm i electron-squirrel-startup
-```
+``` -->
 
 ### Supporting scripts for UX Design
 + Vue.js - https://vuejs.org/

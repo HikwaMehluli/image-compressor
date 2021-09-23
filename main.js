@@ -1,5 +1,5 @@
 /*!
- * Image Compressor v1.0.2
+ * Image Compressor v1.0.5
  * https://github.com/HikwaMehluli/image-compressor
  *
  * Copyright (c) 2018-2020 HikwaMehluli
@@ -7,33 +7,21 @@
  *
  */
 
-//handle setupevents as quickly as possible
-const setupEvents = require('./installers/setupEvents')
-if (setupEvents.handleSquirrelEvent()) {
-   // squirrel event handled and app will exit in 1000ms, so don't do anything else
-   return;
-}
-
-// const electron = require('electron')
-// // Module to control application life.
-// const app = electron.app
-// const {ipcMain} = require('electron')
-// var path = require('path')
-
-
-
 
 // Module to create native browser window.
-const { theapp, BrowserWindow, Menu} = require('electron')
+const { app, BrowserWindow, Menu} = require('electron')
 
 const shell = require('electron').shell
 
 let windowForBrowser
 
+var path = require('path')
+
 function createWindow() {
     windowForBrowser = new BrowserWindow({
         width: 900,
         height: 700,
+        icon: path.join(__dirname, 'assets/icons/png/512x512.png'),
         webPreferences: {
             nodeIntegration: true
         }
@@ -59,7 +47,7 @@ function createWindow() {
                 {
                     label:'Exit', 
                     click() { 
-                        theapp.quit() 
+                        app.quit() 
                     } 
                 }
             ]
@@ -69,21 +57,19 @@ function createWindow() {
 }
 
 // This method will be called when Electron has finished initialization and is ready to create browser windows. Some APIs can only be used after this event occurs.
-theapp.on('ready', createWindow)
+app.on('ready', createWindow)
 
 // Quit when all windows are closed.
-theapp.on('window-all-closed', () => {
+app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') {
-        theapp.quit()
+        app.quit()
     }
 })
 
-theapp.on('activate', () => {
+app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
     if (windowForBrowser === null) {
         createWindow()
     }
 })
-
-
