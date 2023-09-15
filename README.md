@@ -1,32 +1,87 @@
-# Image Compressor
-*Desktop Based - Simple and fast "Digital Image Compression" tool*
+# Image Compressor Tool
 
-[View Demo](https://hikwamehluli.github.io/image-compressor)
+A simple, lightweight and offline image compression tool for Windows computers. 
 
+MacOS and Linux packages coming soon.
 
-### Dev Dependencies
+[View Online Demo](https://hikwamehluli.github.io/image-compressor  "Online Demo")
 
-Image Compressor v1.1.3 - https://github.com/xkeshi/image-compressor
+#
+## Table of contents
 
-Vue.js v2.5.16 - https://vuejs.org/
+<!-- - [Creating Builds](#creating-builds) -->
+- [Development Dependencies](#development-dependencies)
+- [License](#license)
 
-Webpack - https://webpack.js.org/guides/installation/
+<!-- # 
+## Creating Builds
+### Windows (32bit) - Package & Build
+*Open CMD or terminal in your IDE and run the script below*
+<br>
 
-SASS - https://sass-lang.com/install
+```
+npm package-win
+```
 
-Electron - https://www.electronjs.org/
+After running the script the output folder should look like this.
+```text
+dist/
+    |
+    └── image-compressor-win32-ia32
+```
+This folder is a portable version of the offline image compression tool for Windows computers.
 
-Electron Packager - https://github.com/electron/electron-packager
+Next Step - Creating an installable version of the app. Run the script below.
+```
+npm create-installer-win
+```
 
+Your folder structure should look like this if successful. And the "windows-intaller" folder is your offline app.
+```
+dist/
+    ├── image-compressor-win32-ia32
+    └── windows-installer
+```
 
-### Usage
-*This app has only been tested on Windows*
+[⬆ back to top](#table-of-contents) -->
 
-1 - Clone or Download Repo
-2 - run "npm start" to start the desktop app in dev mode
+# 
+## Development Dependencies
 
+### UI Design - SASS
+```
+npm i sass --save-dev
+```
 
-### Build Desktop Installable App
-Windows - npm windows-exe
-Mac - npm package-mac
-Linux - package-linux
+<!-- ### For creating indepent desktop app
+```
+npm i electron --save-dev
+```
+
+### For packaging desktop app
+```
+npm i electron-packager --save-dev
+```
+
+### For creating a Windows executable(.exe) file
+```
+npm i electron-winstaller --save-dev
+```
+
+### For managing desktop shortcuts & uninstall
+```
+npm i electron-squirrel-startup
+``` -->
+
+### Supporting scripts for UX Design
++ Vue.js - https://vuejs.org/
++ Web font is Roboto - https://fonts.google.com/specimen/Roboto
+
+[⬆ back to top](#table-of-contents)
+
+#
+## License
+[MIT](https://opensource.org/licenses/MIT) © [Mehluli Hikwa](https://thatafro.netlify.app/)
+
+#
+[⬆ back to top](#table-of-contents)

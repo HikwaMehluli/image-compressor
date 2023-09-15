@@ -135,12 +135,11 @@ p {
         font-weight: 700;
         text-align: center;
     }
-}
 
-/* Hide deafult input button */
-input {
-    visibility: hidden;
-}
+    /* Hide deafult input button */
+    input {
+        visibility: hidden;
+    }
 
 .inputfile+label {
     color: var(--black-color);
@@ -218,14 +217,6 @@ main {
         &:first-child {
             margin-left: 0;
         }
-    }
-    
-    .quarter {
-        width: 22.75%;
-    }
-
-    .three-quarters {
-        width: 77.25%;
     }
 
     .third {

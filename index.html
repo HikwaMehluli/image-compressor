@@ -7,8 +7,8 @@
     <meta name="description" content="Simple and fast Digital Image Compression tool.">
     <meta name="author" content="Mehluli Hikwa">
     <meta name="theme-color" content="#3b7fff">
-    <title>Image Compressor</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Image Compressor | v1.0.5</title>
+    <link rel="stylesheet" href="./css/app.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="./img/logo.png">
 </head>
@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="content">
-            <h1>Image Compressor <span>v2.0.0</span></h1>
+            <h1>Image Compressor <span>v1.0.2</span></h1>
             <h2>Simple and fast "Digital Image Compression" tool</h2>
         </div>
     </header>
@@ -25,7 +25,7 @@
         <article id="app">
             <!-- FIXME: Wont upload or makes mobile and Ipad browser crush -->
             <section class="content" id="hideUpload" @change="change" @dragover="dragover" @drop="drop">
-                <div class="upload">
+                <div class="upload-section">
                     <p>Drop Image Here or Choose a File</p>
                     <input type="file" id="file" class="inputfile" accept="image/*;capture=camera" ref="input">
                     <label for="file">
@@ -63,6 +63,7 @@
         </article>
     </main>
     
+    <!-- FIXME: Minify Code - Try Webpack -->
     <script src="js/vue.min.js"></script>
     <script src="js/image-compressor.js"></script>
     <script src="js/script.js"></script>

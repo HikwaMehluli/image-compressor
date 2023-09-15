@@ -1,4 +1,3 @@
-
 /*!
  * Image Compressor v2.0.0
  * https://github.com/HikwaMehluli/image-compressor
@@ -7,25 +6,31 @@
  * Released under the MIT license
  *
  */
+
+
+// Module to create native browser window.
 const { app, BrowserWindow, Menu} = require('electron')
 
 const shell = require('electron').shell
 
-let win
+let windowForBrowser
+
+var path = require('path')
 
 function createWindow() {
-    win = new BrowserWindow({
+    windowForBrowser = new BrowserWindow({
         width: 900,
         height: 700,
+        icon: path.join(__dirname, 'assets/icons/png/512x512.png'),
         webPreferences: {
             nodeIntegration: true
         }
     })
 
-    win.loadFile('index.html')
+    windowForBrowser.loadFile('index.html')
     
-    win.on('closed', () => {
-        win = null
+    windowForBrowser.on('closed', () => {
+        windowForBrowser = null
     })
 
     var menu = Menu.buildFromTemplate([
@@ -64,7 +69,7 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
-    if (win === null) {
+    if (windowForBrowser === null) {
         createWindow()
     }
 })
