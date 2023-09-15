@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="content">
-            <h1>Image Compressor <span>v1.0.5</span></h1>
+            <h1>Image Compressor <span>v1.5.0</span></h1>
             <h2>Simple and fast "Digital Image Compression" tool</h2>
         </div>
     </header>
@@ -41,9 +41,14 @@
 
             <section class="content output">
                 <div class="half column">
-                    <div v-if="inputURL">
+                    <!-- <div v-if="inputURL">
                         <img :src="inputURL" :alt="input.name">
                     </div>
+                    <div v-if="inputURL">
+                        <img :src="outputURL" :alt="output.name">
+                    </div> -->
+                    <img src="./img/_meh_test.jpg" alt="">
+                    <img src="./img/_meh_test.jpg" alt="">
                 </div>
                 <div class="half column">
                     <div v-if="outputURL">
@@ -67,6 +72,5 @@
     <script src="js/vue.min.js"></script>
     <script src="js/image-compressor.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script src="js/app.js"></script> -->
 </body>
 </html>

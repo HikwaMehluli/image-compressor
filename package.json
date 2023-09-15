@@ -4,8 +4,8 @@
 	"description": "Simple Image Compression Tool",
 	"author": "thatAfro",
 	"scripts": {
-		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/style.css --style compressed",
-		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/style.css",
+		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/app.css --style compressed",
+		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/app.css",
 		"js-prod": "webpack --mode=production --watch",
 		"js-dev": "webpack --mode=development --watch"
 	},
