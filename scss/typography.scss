@@ -33,12 +33,10 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--black-color);
     background-color: var(--white-color);
-    overflow: hidden;
-    overflow-y: scroll;
-    min-height: 590px;
-    height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    // overflow: hidden;
+    // overflow-y: scroll;
+    // min-height: 590px;
+    // height: 100%;
 }
 
 img {
@@ -118,8 +116,10 @@ p {
 }
 
 
-// UPLOAD FILE
-.upload {
+/**************************************
+        UPLOAD FILE
+**************************************/
+.upload-section {
     background-color: var(--grey-color);
     padding: 20px 0 0 0;
     height: 200px;
@@ -141,7 +141,6 @@ p {
         visibility: hidden;
     }
 }
-
 
 .inputfile+label {
     color: var(--black-color);
@@ -232,4 +231,4 @@ main {
     .half {
         width: 48.5%;
     }
-} 
+}
