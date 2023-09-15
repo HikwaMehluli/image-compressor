@@ -14,15 +14,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+:root {
+    --pri-color: #0c61ff;
+    --sec-color: #0048ce;
+    --black-color: #181a28;
+    --white-color: white;
+    --transition-500: all 0.5s;
+    --grey-color: #f4f4f4;
+    --dark-grey-color: #6a7c9f;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    background: white url('../img/body-bg.png') repeat;
+    background: var(--white-color) url('../img/body-bg.png') repeat;
     font-family: 'Roboto', sans-serif;
-    color: #25283D;
-    background-color: white;
+    color: var(--black-color);
+    background-color: var(--white-color);
     overflow: hidden;
     overflow-y: scroll;
     min-height: 590px;
@@ -39,14 +49,14 @@ img {
 }
 
 a {
-    color: #0c61ff;
+    color: var(--pri-color);
     text-decoration: none;
 }
 
 .button a {
-    background: #0a5fff;
+    background: var(--pri-color);
     cursor: pointer;
-    color: white;
+    color: var(--white-color);
     display: inline-block;
     font-size: 1.6em;
     padding: 10px 20px;
@@ -56,20 +66,18 @@ a {
     position: relative;
     text-decoration: none;
     width: auto;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
+    transition: --transition-500;
     
     &:hover {
-        background: #0c61ff;
+        background: var(--sec-color);
     }
 }
 
 
 // SECTIONS
 header {
-    background: #0c61ff url('../img/header-bg.png');
-    color: white;
+    background: var(--pri-color) url('../img/header-bg.png');
+    color: var(--white-color);
     padding: 3% 0;
 
     h1 {
@@ -85,12 +93,6 @@ header {
     h2 {
         font-size: 2rem;
         font-weight: 300;
-    }
-
-    h3 {
-        font-size: 1.8rem;
-        font-weight: 500;
-        padding: 2% 0;
     }
 }
 
@@ -109,7 +111,7 @@ p {
 }
 
 .image-reduction {
-    background: #f4f4f4;
+    background: var(--grey-color);
     width: auto;
     padding: 15px 0 0 15px;
     margin-bottom: 20px;
@@ -118,19 +120,19 @@ p {
 
 // UPLOAD FILE
 .upload {
-    background-color: #f4f4f4;
+    background-color: var(--grey-color);
     padding: 20px 0 0 0;
     height: 200px;
-    border: 3px dashed #3b7fff;
-    transition: all .5s;
+    border: 3px dashed var(--pri-color);
+    transition: var(--transition-500);
 
     &:hover {
         background-color: #efefef;
     }
 
     p {
-        color: #004ee2;
-        font-weight: 500;
+        color: var(--pri-color);
+        font-weight: 700;
         text-align: center;
     }
 }
@@ -141,7 +143,7 @@ input {
 }
 
 .inputfile+label {
-    color: black;
+    color: var(--black-color);
     cursor: pointer;
     display: inline-block;
 
@@ -157,17 +159,17 @@ input {
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        background-color: #3b7fff;
+        background-color: var(--pri-color);
         display: block;
         padding: 20px;
         margin: 0 auto;
-        transition: all .5s;
+        transition: var(--transition-500);
     }
 
     svg {
         width: 100%;
         height: 100%;
-        fill: white;
+        fill: var(--white-color);
         vertical-align: middle;
         margin-top: -4px;
         margin-right: 4px;
@@ -176,7 +178,7 @@ input {
 
 .inputfile:focus+label figure,
 .inputfile+label:hover figure {
-    background-color: #6a7c9f;
+    background-color: var(--dark-grey-color);
 }
 
 
