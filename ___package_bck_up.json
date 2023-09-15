@@ -18,6 +18,9 @@
 		"package-linux": "electron-packager . image-compressor --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/512x512.png --prune=true --out=dist"
 	},
 	"devDependencies": {
+		// "electron": "^7.3.3",
+		// "electron-packager": "^14.2.1",
+		// "sass": "^1.26.11"
 		"sass": "^1.63.6",
 		"webpack": "^5.88.1",
 		"webpack-cli": "^5.1.4"
