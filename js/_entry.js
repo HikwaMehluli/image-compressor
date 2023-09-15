@@ -1,4 +1,4 @@
-import './vue.min.js';
+// import './vue.min.js';
 
 import './image-compressor.js';
 

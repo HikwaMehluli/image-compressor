@@ -1,6 +1,6 @@
 
 /*!
- * Image Compressor v2.0.0
+ * Image Compressor v1.5.0
  * https://github.com/HikwaMehluli/image-compressor
  *
  * Copyright (c) 2018-present Hikwa Mehluli
