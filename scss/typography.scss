@@ -20,8 +20,8 @@
     --black-color: #181a28;
     --white-color: white;
     --transition-500: all 0.5s;
-    --grey-color: #f4f4f4;
-    --dark-grey-color: #6a7c9f;
+    --grey-color: #f0f0f0;
+    --dark-grey-color: #5b6c8f;
 }
 
 html {
@@ -30,13 +30,8 @@ html {
 
 body {
     background: var(--white-color) url('../img/body-bg.png') repeat;
-    font-family: 'Roboto', sans-serif;
     color: var(--black-color);
-    background-color: var(--white-color);
-    // overflow: hidden;
-    // overflow-y: scroll;
-    // min-height: 590px;
-    // height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 img {
@@ -46,17 +41,17 @@ img {
     height: auto;
 }
 
-a {
-    color: var(--pri-color);
-    text-decoration: none;
-}
+// a {
+//     color: var(--pri-color);
+//     text-decoration: none;
+// }
 
 .button a {
     background: var(--pri-color);
     cursor: pointer;
     color: var(--white-color);
     display: inline-block;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     padding: 10px 20px;
     text-shadow: none;
     text-align: center;
@@ -72,7 +67,9 @@ a {
 }
 
 
-// SECTIONS
+/**************************************
+        SECTIONS
+**************************************/
 header {
     background: var(--pri-color) url('../img/header-bg.png');
     color: var(--white-color);
@@ -96,22 +93,13 @@ header {
 
 p {
     font-size: 1.6rem;
-    line-height: 1.5em;
+    line-height: .5em;
     padding-bottom: 30px;
 }
 
-.output {
-    padding: 30px 0 50px 0;
-
-    p {
-        padding-bottom: 20px;
-    }
-}
-
-.image-reduction {
+.resluts-container {
     background: var(--grey-color);
-    width: auto;
-    padding: 15px 0 0 15px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
@@ -121,19 +109,20 @@ p {
 **************************************/
 .upload-section {
     background-color: var(--grey-color);
-    padding: 20px 0 0 0;
-    height: 200px;
     border: 3px dashed var(--pri-color);
+    height: 200px;
+    margin: 30px 0 0 0;
     transition: var(--transition-500);
 
     &:hover {
-        background-color: #efefef;
+        background-color: #e8e9ef;
     }
 
     p {
         color: var(--pri-color);
-        font-weight: 700;
+        font-weight: 600;
         text-align: center;
+        padding: 20px 0 10px 0;
     }
 
     /* Hide deafult input button */
@@ -145,17 +134,10 @@ p {
 .inputfile+label {
     color: var(--black-color);
     cursor: pointer;
-    display: inline-block;
-
-    /* centering icon */
-    position: absolute;
+    display: inline;
     margin: 0 auto;
-    top: 70px;
-    right: 0;
-    bottom: 0;
-    left: 0;
 
-    figure {
+    .circle {
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -176,8 +158,8 @@ p {
     }
 }
 
-.inputfile:focus+label figure,
-.inputfile+label:hover figure {
+.inputfile:focus+label .circle,
+.inputfile+label:hover .circle {
     background-color: var(--dark-grey-color);
 }
 
@@ -186,7 +168,7 @@ p {
         RESPONSIVE FRAMEWORK
 **************************************/
 main {
-    margin-top: 3%;
+    margin-top: 5% 0;
 }
 
 .content {
