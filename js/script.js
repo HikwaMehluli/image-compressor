@@ -111,9 +111,9 @@ window.addEventListener('DOMContentLoaded', function () {
         }
 
         // Create test element
-        var el = document.createElement("input");
-        el.type = "file";
-        return !el.disabled;
+        var textElement = document.createElement("input");
+        textElement.type = "file";
+        return !textElement.disabled;
     })();
 
     // Add 'fileinput' class to html element if supported

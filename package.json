@@ -10,6 +10,7 @@
 		"js-dev": "webpack --mode=development --watch"
 	},
 	"devDependencies": {
+		"@electron-forge/cli": "^6.4.2",
 		"sass": "^1.63.6",
 		"webpack": "^5.88.1",
 		"webpack-cli": "^5.1.4"
