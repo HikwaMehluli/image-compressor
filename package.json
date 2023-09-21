@@ -4,13 +4,13 @@
 	"description": "Simple Image Compression Tool",
 	"author": "thatAfro",
 	"scripts": {
+		"start": "electron .",
 		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/app.css --style compressed",
 		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/app.css",
 		"js-prod": "webpack --mode=production --watch",
 		"js-dev": "webpack --mode=development --watch"
 	},
 	"devDependencies": {
-		"@electron-forge/cli": "^6.4.2",
 		"sass": "^1.63.6",
 		"webpack": "^5.88.1",
 		"webpack-cli": "^5.1.4"
