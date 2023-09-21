@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     minHeight: 0,
                     width: undefined,
                     height: undefined,
-                    quality: 0.8,
+                    quality: 0.75,
                     mimeType: '',
                     convertSize: 5000000,
                     success: function (file) {
