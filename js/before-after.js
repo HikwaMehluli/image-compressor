@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var beforeAfterExample = new BeforeAfter(document.querySelector('#compareImage'));
-});
-
 var BeforeAfter = (function () {
     function BeforeAfter(handler) {
         this.handler = handler;

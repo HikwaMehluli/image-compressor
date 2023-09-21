@@ -41,15 +41,20 @@
 
             <section class="content">
                 <div class="half column">
+                    
+                    <div v-if="inputURL">
+                        <img :src="outputURL" :alt="output.name">
+                    </div>
 
-                    <div id="compareImage">
+                    <!-- <div id="compareImage">
                         <div v-if="inputURL">
                             <img :src="inputURL" :alt="input.name">
                         </div>
                         <div v-if="inputURL">
                             <img :src="outputURL" :alt="output.name">
                         </div>
-                    </div>
+                    </div> -->
+
                     <!-- <div id="compareImage">
                         <img src="./img/meh_before.jpg" alt="Before" />
                         <img src="./img/meh_after.jpg" alt="After" />
@@ -64,10 +69,8 @@
                             <p>Original size: {{ input.size | prettySize }}</p>
                             <p>Converted size: {{ output.size | prettySize }}</p>
                             <div class="button">
-                                <a :download="output.name" :href="outputURL" title="Download the compressed image">Download</a>
+                                <a :download="output.name" :href="outputURL" title="Download the Compressed Image">Download</a>
                             </div>
-                            <!-- <br> -->
-                            <!-- <p><a href="">Convert Another Image</a></p> -->
                         </div>
                     </div>
                 </div>
@@ -76,11 +79,14 @@
     </main>
     
     <!-- FIXME: Minify Code - Try Webpack -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const beforeAfterExample = new BeforeAfter(document.querySelector('#compareImage'));
+        });
+    </script> -->
     <!-- <script src="js/before-after.js"></script> -->
     <script src="js/vue.min.js"></script>
     <script src="js/image-compressor.js"></script>
     <script src="js/script.js"></script>
-
-    <!-- <script src="js/app.js"></script> -->
 </body>
 </html>
