@@ -1,8 +1,9 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-function createWindow() {
-	const win = new BrowserWindow({
+function createMainWindow() {
+	const mainWindow = new BrowserWindow({
+		title: 'Image Compressor',
 		width: 800,
 		height: 600,
 		webPreferences: {
@@ -10,15 +11,15 @@ function createWindow() {
 		}
 	})
 
-	win.loadFile('index.html')
+	mainWindow.loadFile('index.html')
 }
 
 app.whenReady().then(() => {
-	createWindow()
+	createMainWindow()
 
 	app.on('activate', () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
-			createWindow()
+			createMainWindow()
 		}
 	})
 })

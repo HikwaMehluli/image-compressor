@@ -6,7 +6,7 @@
 	"main": "main.js",
 	"author": "thatAfro",
 	"scripts": {
-		"start": "start",
+		"start": "electron .",
 		"css-prod": "sass --no-source-map --watch scss/_entry.scss:css/app.css --style compressed",
 		"css-dev": "sass --no-source-map --watch scss/_entry.scss:css/app.css",
 		"js-prod": "webpack --mode=production --watch",
