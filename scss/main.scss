@@ -122,8 +122,8 @@ p {
 
     /* Hide deafult input button */
     input {
-        // visibility: hidden;
-        display: none;
+        visibility: hidden;
+        // display: none;
     }
 }
 
@@ -134,6 +134,7 @@ p {
     position: relative;
     top: -45px;
     height: 200px;
+    transition: var(--transition-500);
 
     .circle {
         width: 100px;
@@ -144,7 +145,7 @@ p {
         padding: 20px;
         margin: 0 auto;
         position: relative;
-        top: 65px;
+        top: 45px;
         transition: var(--transition-500);
     }
 
