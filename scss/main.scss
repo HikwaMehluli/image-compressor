@@ -19,9 +19,9 @@
     --sec-color: #0048ce;
     --black-color: #181a28;
     --white-color: white;
-    --transition-500: all 0.5s;
     --grey-color: #f0f0f0;
     --dark-grey-color: #5b6c8f;
+    --transition-500: all 0.5s;
 }
 
 html {
@@ -41,11 +41,6 @@ img {
     height: auto;
 }
 
-// a {
-//     color: var(--pri-color);
-//     text-decoration: none;
-// }
-
 .button a {
     background: var(--pri-color);
     cursor: pointer;
@@ -59,7 +54,7 @@ img {
     position: relative;
     text-decoration: none;
     width: auto;
-    transition: --transition-500;
+    transition: var(--transition-500);
     
     &:hover {
         background: var(--sec-color);
@@ -127,15 +122,18 @@ p {
 
     /* Hide deafult input button */
     input {
-        visibility: hidden;
+        // visibility: hidden;
+        display: none;
     }
 }
 
 .inputfile+label {
     color: var(--black-color);
     cursor: pointer;
-    display: inline;
-    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: -45px;
+    height: 200px;
 
     .circle {
         width: 100px;
@@ -145,6 +143,8 @@ p {
         display: block;
         padding: 20px;
         margin: 0 auto;
+        position: relative;
+        top: 65px;
         transition: var(--transition-500);
     }
 
@@ -168,7 +168,7 @@ p {
         RESPONSIVE FRAMEWORK
 **************************************/
 main {
-    margin-top: 5% 0;
+    margin: 5% 0;
 }
 
 .content {
