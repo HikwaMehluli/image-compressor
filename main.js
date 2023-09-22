@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, shell} = require('electron')
+const { app, BrowserWindow, Menu, shell } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -21,6 +21,7 @@ function createWindow() {
 				{
 					label: 'Author Info',
 					click: () => {
+						// Handle the "Author Info" menu item click
 						shell.openExternal('https://thatafro.netlify.app/')
 					}
 				}
