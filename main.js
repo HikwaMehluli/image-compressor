@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu, shell} = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -13,47 +13,26 @@ function createWindow() {
 
 	win.loadFile('index.html')
 
-	// Create Menu Items
-	// const template = [
-	// 	{
-	// 		label: 'File',
-	// 		submenu: [
-	// 			{
-	// 				label: 'Open',
-	// 				click: () => {
-	// 					// Handle the "Open" menu item click
-	// 				}
-	// 			},
-	// 			{
-	// 				label: 'Save',
-	// 				click: () => {
-	// 					// Handle the "Save" menu item click
-	// 				}
-	// 			},
-	// 			{ type: 'separator' },
-	// 			{
-	// 				label: 'Exit',
-	// 				click: () => {
-	// 					app.quit()
-	// 				}
-	// 			}
-	// 		]
-	// 	},
-	// 	{
-	// 		label: 'About',
-	// 		submenu: [
-	// 			{
-	// 				label: 'Author Info',
-	// 				click: () => {
-	// 					// Handle the "Save" menu item click
-	// 				}
-	// 			}
-	// 		]
-	// 	}
-	// ]
+	// Create the menu template
+	const template = [
+		{
+			label: 'About',
+			submenu: [
+				{
+					label: 'Author Info',
+					click: () => {
+						shell.openExternal('https://thatafro.netlify.app/')
+					}
+				}
+			]
+		}
+	]
 
-	// const menu = Menu.buildFromTemplate(template)
-	// Menu.setApplicationMenu(menu)
+	// Build the menu from the template
+	const menu = Menu.buildFromTemplate(template)
+
+	// Set the menu as the application menu
+	Menu.setApplicationMenu(menu)
 }
 
 app.whenReady().then(() => {
