@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path')
 
 function createWindow() {
 	const win = new BrowserWindow({
@@ -6,10 +7,53 @@ function createWindow() {
 		height: 600,
 		webPreferences: {
 			nodeIntegration: true
-		}
+		},
+		icon: path.join(__dirname, './img/512.png')
 	})
 
 	win.loadFile('index.html')
+
+	// Create Menu Items
+	const template = [
+		{
+			label: 'File',
+			submenu: [
+				{
+					label: 'Open',
+					click: () => {
+						// Handle the "Open" menu item click
+					}
+				},
+				{
+					label: 'Save',
+					click: () => {
+						// Handle the "Save" menu item click
+					}
+				},
+				{ type: 'separator' },
+				{
+					label: 'Exit',
+					click: () => {
+						app.quit()
+					}
+				}
+			]
+		},
+		{
+			label: 'About',
+			submenu: [
+				{
+					label: 'Author Info',
+					click: () => {
+						// Handle the "Save" menu item click
+					}
+				}
+			]
+		}
+	]
+
+	const menu = Menu.buildFromTemplate(template)
+	Menu.setApplicationMenu(menu)
 }
 
 app.whenReady().then(() => {
