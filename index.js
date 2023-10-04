@@ -21,7 +21,6 @@ function createWindow() {
 				{
 					label: 'Author Info',
 					click: () => {
-						// Handle the "Author Info" menu item click
 						shell.openExternal('https://thatafro.netlify.app/')
 					}
 				}

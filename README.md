@@ -1,8 +1,8 @@
-# Image Compressor Tool
+# Image Compression Tool
 
-A simple, lightweight and offline image compression tool for Windows computers. 
+A simple, lightweight and fast image compression tool.
 
-MacOS and Linux packages coming soon.
+Windows, MacOS and Linux packages coming soon.
 
 [View Online Demo](https://hikwamehluli.github.io/image-compressor  "Online Demo")
 
