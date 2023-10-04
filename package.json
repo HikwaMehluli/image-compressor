@@ -3,7 +3,7 @@
 	"productName": "Image Compressor - thatAfro",
 	"version": "1.5.0",
 	"description": "Simple Image Compression Tool",
-	"main": "main.js",
+	"main": "index.js",
 	"author": "thatAfro",
 	"scripts": {
 		"start": "electron .",
