@@ -42,20 +42,9 @@
 
             <section class="content">
                 <div class="half column">
-
                     <div v-if="inputURL">
                         <img :src="outputURL" :alt="output.name">
-
-                        <!-- <div id="compareImage">
-                            <img :src="inputURL" :alt="input.name">
-                            <img :src="outputURL" :alt="output.name">
-                        </div> -->
                     </div>
-
-                    <!-- <div id="compareImage">
-                        <img src="./img/meh_before.jpg" alt="Before" />
-                        <img src="./img/meh_after.jpg" alt="After" />
-                    </div> -->
                 </div>
 
                 <div class="half column">
@@ -74,15 +63,7 @@
             </section>
         </article>
     </main>
-
-    <!-- FIXME: Minify Code - Try Webpack -->
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const beforeAfterExample = new BeforeAfter(document.querySelector('#compareImage'));
-        });
-    </script>
-    <script src="js/before-after.js"></script> -->
-
+    
     <script src="js/vue.min.js"></script>
     <script src="js/image-compressor.js"></script>
     <script src="js/script.js"></script>
