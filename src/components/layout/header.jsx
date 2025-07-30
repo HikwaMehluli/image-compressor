@@ -3,6 +3,8 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { ShareMenu } from '@/components/share-menu';
 
 export default function Header() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <header className="sticky top-0 z-10 w-full bg-[#0048ce] dark:bg-header-dark text-primary-foreground border-b">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">

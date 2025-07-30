@@ -15,7 +15,10 @@ export function ShareMenu() {
   const [url, setUrl] = React.useState("");
 
   React.useEffect(() => {
-    setUrl(window.location.href);
+    // Correctly construct the URL for sharing, respecting the basePath
+    const origin = window.location.origin;
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    setUrl(`${origin}${basePath}`);
   }, []);
 
   const text = "Check out this awesome image compression tool!";
