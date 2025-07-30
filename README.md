@@ -1,6 +1,6 @@
-# Image Compression Tool
+# Image Compressor
 
-A simple, lightweight, and fast multi-image compression tool built with Next.js and Tailwind CSS. This tool runs entirely in the browser, ensuring your files are processed privately and securely on your own device. It is fully functional offline as a Progressive Web App (PWA).
+A simple, light weight, and fast multi-image compression tool. This tool runs entirely in the browser, ensuring your files are processed privately and securely on your own device. It is fully functional offline as a Progressive Web App (PWA).
 
 ## Features
 

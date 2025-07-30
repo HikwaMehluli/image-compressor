@@ -4,10 +4,10 @@ import Script from "next/script";
 import './globals.css';
 
 export const metadata = {
-  title: 'Image Downsizing',
+  title: 'Image Compressor | by Hikwa Mehluli',
   description: 'Simple and fast "Image Compression" tool. Convert and compress your images with ease, even offline.',
   keywords: 'image compression, image converter, image optimizer, webp converter, jpg converter, png converter, reduce image size, offline image tool',
-  author: 'thatAfro',
+  author: 'Hikwa Mehluli',
   manifest: '/manifest.json',
 };
 

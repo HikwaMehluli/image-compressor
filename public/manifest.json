@@ -1,6 +1,6 @@
 {
-  "name": "Image Compression Tool",
-  "short_name": "ImageCompress",
+  "name": "Image Compressor",
+  "short_name": "ImageCompressor",
   "description": "Simple and fast \"Image Compression\" tool. Convert and compress your images with ease, even offline.",
   "start_url": "/",
   "display": "standalone",
