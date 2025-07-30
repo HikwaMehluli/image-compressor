@@ -71,7 +71,6 @@ export default function FileUploader({ onFilesAdded, disabled }) {
       <div className="flex flex-col items-center justify-center gap-2">
         <UploadCloud size={64} className={cn("w-16 h-16", isDragging ? "text-primary" : "text-muted-foreground")} />
         <p className="text-lg font-semibold text-foreground">Click or drag & drop to upload</p>
-        <p className="text-sm text-muted-foreground">or use your camera on mobile</p>
         <p className="text-xs text-muted-foreground mt-1">Supported formats: JPG, PNG, WebP, SVG</p>
       </div>
       {isDragging && <div className="absolute inset-0 bg-primary/10 rounded-xl" />}
