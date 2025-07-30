@@ -7,58 +7,13 @@ import FileUploader from '@/components/file-uploader';
 import ImageList from '@/components/image-list';
 import { useToast } from "@/hooks/use-toast";
 import { processImage } from '@/lib/image-processor';
+import { PwaInstallProvider } from '@/components/pwa-install-provider';
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
 export default function Home() {
   const [files, setFiles] = useState([]);
   const { toast } = useToast();
-
-  useEffect(() => {
-    let deferredPrompt;
-
-    const handleBeforeInstallPrompt = (e) => {
-      // Prevent the browser's default prompt
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      deferredPrompt = e;
-      // You could show a custom install button here and trigger the prompt with deferredPrompt.prompt()
-      // For simplicity, we'll prompt immediately
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'pwa_install_prompt_accepted', {
-              'event_category': 'pwa',
-              'event_label': 'PWA Install Accepted'
-            });
-          }
-        }
-        deferredPrompt = null;
-      });
-    };
-    
-    const handleInstall = (e) => {
-      // Prevent the default install prompt
-      e.preventDefault();
-      // Send event to Google Analytics
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'pwa_install', {
-          'event_category': 'pwa',
-          'event_label': 'PWA Installed'
-        });
-      }
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('appinstalled', handleInstall);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('appinstalled', handleInstall);
-    };
-  }, []);
 
   const handleFileUpdate = useCallback((id, newProps) => {
     setFiles(prev => prev.map(f => f.id === id ? { ...f, ...newProps } : f));
@@ -85,7 +40,7 @@ export default function Home() {
   
   useEffect(() => {
     handleProcessQueue();
-  }, [handleProcessQueue]);
+  }, [files, handleProcessQueue]);
 
   const handleFilesAdded = useCallback((addedFiles) => {
     const validFiles = [];
@@ -200,21 +155,23 @@ export default function Home() {
   }, [files, toast]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <Header />
-      <main className="flex-grow container mx-auto p-4 md:p-8">
-        <div className="max-w-7xl mx-auto space-y-8">
-          <FileUploader onFilesAdded={handleFilesAdded} disabled={files.some(f => f.status === 'processing')} />
-          <ImageList
-            files={files}
-            onRemoveFile={handleRemoveFile}
-            onSettingsChange={handleSettingsChange}
-            onClearAll={handleClearAll}
-            onDownloadAll={handleDownloadAll}
-          />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <PwaInstallProvider>
+      <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <Header />
+        <main className="flex-grow container mx-auto p-4 md:p-8">
+          <div className="max-w-7xl mx-auto space-y-8">
+            <FileUploader onFilesAdded={handleFilesAdded} disabled={files.some(f => f.status === 'processing')} />
+            <ImageList
+              files={files}
+              onRemoveFile={handleRemoveFile}
+              onSettingsChange={handleSettingsChange}
+              onClearAll={handleClearAll}
+              onDownloadAll={handleDownloadAll}
+            />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </PwaInstallProvider>
   );
 }

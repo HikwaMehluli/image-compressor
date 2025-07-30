@@ -1,19 +1,19 @@
 {
   "name": "Image Compressor",
-  "short_name": "ImageCompressor",
-  "description": "Simple and fast \"Image Compression\" tool. Convert and compress your images with ease, even offline.",
-  "start_url": "/",
+  "short_name": "ImgCompress",
+  "description": "Simple and fast client-side image compression tool.",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0048ce",
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
