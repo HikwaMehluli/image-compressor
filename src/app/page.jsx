@@ -8,6 +8,8 @@ import ImageList from '@/components/image-list';
 import { useToast } from "@/hooks/use-toast";
 import { processImage } from '@/lib/image-processor';
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+
 export default function Home() {
   const [files, setFiles] = useState([]);
   const { toast } = useToast();
@@ -69,7 +71,7 @@ export default function Home() {
     handleFileUpdate(fileToProcess.id, { status: 'processing' });
     try {
       const processed = await processImage(fileToProcess.file, fileToProcess.settings);
-      handleFileUpdate(fileToProcess.id, { processed, status: 'done' });
+      handleFileUpdate(fileToCprocess.id, { processed, status: 'done' });
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error during processing';
       handleFileUpdate(fileToProcess.id, { status: 'error', error: errorMessage });
@@ -86,9 +88,37 @@ export default function Home() {
   }, [handleProcessQueue]);
 
   const handleFilesAdded = useCallback((addedFiles) => {
-    const newImageFiles = addedFiles
-      .filter(file => ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'].includes(file.type))
-      .map(file => {
+    const validFiles = [];
+    const oversizedFiles = [];
+    const unsupportedFiles = [];
+
+    addedFiles.forEach(file => {
+      if (!['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'].includes(file.type)) {
+        unsupportedFiles.push(file);
+      } else if (file.size > MAX_FILE_SIZE) {
+        oversizedFiles.push(file);
+      } else {
+        validFiles.push(file);
+      }
+    });
+
+    if (unsupportedFiles.length > 0) {
+      toast({
+        variant: "destructive",
+        title: "Unsupported File Type",
+        description: "Some files were not added. Only JPG, PNG, WebP and SVG formats are supported.",
+      });
+    }
+
+    if (oversizedFiles.length > 0) {
+      toast({
+        variant: "destructive",
+        title: "File Too Large",
+        description: `${oversizedFiles.map(f => f.name).join(', ')} exceeded the 10MB size limit.`,
+      });
+    }
+    
+    const newImageFiles = validFiles.map(file => {
         let fileType = file.type.split('/')[1].toUpperCase();
         if (fileType.includes('SVG')) fileType = 'SVG';
         const format = fileType === 'JPEG' ? 'JPG' : fileType;
@@ -107,13 +137,6 @@ export default function Home() {
       });
 
     setFiles(prev => [...prev, ...newImageFiles]);
-    if (newImageFiles.length !== addedFiles.length) {
-       toast({
-        variant: "destructive",
-        title: "Unsupported File Type",
-        description: "Some files were not added. Only JPG, PNG, WebP and SVG formats are supported.",
-      });
-    }
   }, [toast]);
   
   const handleSettingsChange = useCallback((id, settings) => {
