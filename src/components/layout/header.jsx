@@ -10,7 +10,7 @@ export default function Header() {
               <h1 className="text-xl sm:text-2xl font-bold font-headline tracking-tight">
                 Image Compressor
               </h1>
-              <span className="text-sm font-medium text-primary-foreground/80">v0.5.0</span>
+              <span className="text-sm font-medium text-primary-foreground/80">v1.3.5</span>
             </div>
             <p className="text-sm text-primary-foreground/80 italic">Simple & fast "Image Compression" tool</p>
           </div>
