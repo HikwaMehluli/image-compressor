@@ -64,7 +64,6 @@ export default function FileUploader({ onFilesAdded, disabled }) {
         type="file"
         multiple
         accept="image/*"
-        capture="environment"
         onChange={handleChange}
         className="hidden"
         disabled={disabled}
