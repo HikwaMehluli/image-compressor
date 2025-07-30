@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Download, X, LoaderCircle, AlertCircle, CheckCircle } from 'lucide-react';
@@ -114,12 +114,12 @@ export default function ImageCard({
                 {status === 'error' && <div className="text-center text-destructive p-4"><AlertCircle size={32} className="mx-auto mb-2 h-8 w-8" /><p className="text-xs">{error}</p></div>}
                 {(status === 'done' && processed) && (
                 <>
-                    <Image src={processed.dataUrl} alt="Processed" layout="fill" objectFit="contain" />
+                    <Image src={processed.dataUrl} alt="Processed" fill style={{ objectFit: 'contain' }} />
                     <Badge variant="secondary" className="absolute top-2 right-2">{formatBytes(processed.size)}</Badge>
                 </>
                 )}
-                 {status !== 'done' && isOriginalSvg && (
-                    <Image src={originalUrl} alt="Original SVG Preview" layout="fill" objectFit="contain" />
+                 {(status === 'idle' || (status !== 'done' && isOriginalSvg)) && isOriginalSvg && (
+                    <Image src={originalUrl} alt="Original SVG Preview" fill style={{ objectFit: 'contain' }} />
                 )}
                 {status === 'idle' && !isOriginalSvg && <div className="text-muted-foreground text-sm">Waiting to process...</div>}
           </div>
@@ -162,7 +162,6 @@ export default function ImageCard({
            {error && status === 'error' && (
              <Alert variant="destructive">
                <AlertCircle size={16} />
-               <AlertTitle>Processing Error</AlertTitle>
                <AlertDescription>{error}</AlertDescription>
              </Alert>
            )}
