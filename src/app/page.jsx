@@ -7,7 +7,6 @@ import FileUploader from '@/components/file-uploader';
 import ImageList from '@/components/image-list';
 import { useToast } from "@/hooks/use-toast";
 import { processImage } from '@/lib/image-processor';
-import { PwaInstallProvider } from '@/components/pwa-install-provider';
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
@@ -155,23 +154,21 @@ export default function Home() {
   }, [files, toast]);
 
   return (
-    <PwaInstallProvider>
-      <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow container mx-auto p-4 md:p-8">
-          <div className="max-w-7xl mx-auto space-y-8">
-            <FileUploader onFilesAdded={handleFilesAdded} disabled={files.some(f => f.status === 'processing')} />
-            <ImageList
-              files={files}
-              onRemoveFile={handleRemoveFile}
-              onSettingsChange={handleSettingsChange}
-              onClearAll={handleClearAll}
-              onDownloadAll={handleDownloadAll}
-            />
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </PwaInstallProvider>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Header />
+      <main className="flex-grow container mx-auto p-4 md:p-8">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <FileUploader onFilesAdded={handleFilesAdded} disabled={files.some(f => f.status === 'processing')} />
+          <ImageList
+            files={files}
+            onRemoveFile={handleRemoveFile}
+            onSettingsChange={handleSettingsChange}
+            onClearAll={handleClearAll}
+            onDownloadAll={handleDownloadAll}
+          />
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }
