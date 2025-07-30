@@ -1,6 +1,5 @@
 import React from 'react';
 import { ModeToggle } from '@/components/mode-toggle';
-import { ShareMenu } from '@/components/share-menu';
 
 export default function Header() {
   return (
@@ -16,7 +15,6 @@ export default function Header() {
             <p className="text-sm text-primary-foreground/80 italic">Simple & fast "Image Compression" tool</p>
           </div>
           <div className="flex items-center gap-2 [&_button]:bg-transparent [&_button]:border-primary-foreground [&_button]:text-primary-foreground [&_button:hover]:bg-primary-foreground/20 [&_button:hover]:text-primary-foreground">
-            <ShareMenu />
             <ModeToggle />
           </div>
       </div>
