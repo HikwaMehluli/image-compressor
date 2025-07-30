@@ -15,7 +15,7 @@ export default function Header() {
               </h1>
               <span className="text-sm font-medium text-primary-foreground/80">v0.5.0</span>
             </div>
-            <p className="text-sm text-primary-foreground/80">Simple & fast "Image Compression" tool</p>
+            <p className="text-sm text-primary-foreground/80 italic">Simple & fast "Image Compression" tool</p>
           </div>
           <div className="flex items-center gap-2 [&_button]:bg-transparent [&_button]:border-primary-foreground [&_button]:text-primary-foreground [&_button:hover]:bg-primary-foreground/20 [&_button:hover]:text-primary-foreground">
             <ShareMenu />
