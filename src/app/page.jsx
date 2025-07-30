@@ -71,7 +71,7 @@ export default function Home() {
     handleFileUpdate(fileToProcess.id, { status: 'processing' });
     try {
       const processed = await processImage(fileToProcess.file, fileToProcess.settings);
-      handleFileUpdate(fileToCprocess.id, { processed, status: 'done' });
+      handleFileUpdate(fileToProcess.id, { processed, status: 'done' });
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error during processing';
       handleFileUpdate(fileToProcess.id, { status: 'error', error: errorMessage });
