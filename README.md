@@ -7,10 +7,9 @@ A simple, light weight, and fast multi-image compression tool. This tool runs en
 -   **Client-Side Processing**: All image compression is done in your browser. No files are ever uploaded to a server.
 -   **Multiple Format Support**: Upload JPG, PNG, WebP, and SVG images.
 -   **Camera Upload**: On mobile devices, you can capture photos directly from the camera.
--   **Flexible Output**: Convert images to JPG, PNG, or WebP.
--   **Quality Control**: Adjust the quality of JPG and WebP images to find the perfect balance between size and quality.
+-   **Flexible Output & Quality Control**: Convert images to JPG, PNG, or WebP and Adjust the quality of  images to find the perfect balance between size and quality.
 -   **PWA with Offline Functionality**: Works without an internet connection after the first visit. The app is installable on your device for easy access.
--   **Dark Mode**: Includes a sleek, user-friendly interface with a dark mode theme.
+-   **Dark/Light Mode**: Includes a sleek, user-friendly interface with a dark and light mode theme.
 -   **Bulk Operations**: Process multiple files at once, with options to download all or clear the queue.
 -   **Google Analytics**: PWA installation events are tracked using Google Analytics.
 
