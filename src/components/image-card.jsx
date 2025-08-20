@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React from 'react';
 
 import {
@@ -79,7 +80,7 @@ export default function ImageCard({
     if (savings >= 0) {
       return (
         <p className="text-sm text-green-600 dark:text-green-500">
-          You'll save <span className="font-semibold text-foreground">{formatBytes(savings)}</span> ({changePercentage}%)
+          You&apos;ll save <span className="font-semibold text-foreground">{formatBytes(savings)}</span> ({changePercentage}%)
         </p>
       );
     } else {
@@ -114,12 +115,12 @@ export default function ImageCard({
                 {status === 'error' && <div className="text-center text-destructive p-4"><AlertCircle size={32} className="mx-auto mb-2 h-8 w-8" /><p className="text-xs">{error}</p></div>}
                 {(status === 'done' && processed) && (
                 <>
-                    <img src={processed.dataUrl} alt="Processed" className="object-contain w-full h-full" />
+                    <Image src={processed.dataUrl} alt="Processed" fill style={{ objectFit: 'contain' }} />
                     <Badge variant="secondary" className="absolute top-2 right-2">{formatBytes(processed.size)}</Badge>
                 </>
                 )}
                  {(status === 'idle' || (status !== 'done' && isOriginalSvg)) && isOriginalSvg && (
-                    <Image src={originalUrl} alt="Original SVG Preview" fill style={{ objectFit: 'contain' }} />
+                    <img src={originalUrl} alt="Original SVG Preview" className="object-contain w-full h-full" />
                 )}
                 {status === 'idle' && !isOriginalSvg && <div className="text-muted-foreground text-sm">Waiting to process...</div>}
           </div>

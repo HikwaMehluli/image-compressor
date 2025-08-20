@@ -2,14 +2,13 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script";
 import './globals.css';
-import { PwaInstallProvider } from "@/components/pwa-install-provider";
+
 
 export const metadata = {
   title: 'Image Compressor | by Hikwa Mehluli',
   description: 'Simple and fast "Image Compression" tool. Convert and compress your images with ease, even offline.',
   keywords: 'image compression, image converter, image optimizer, webp converter, jpg converter, png converter, reduce image size, offline image tool',
   author: 'Hikwa Mehluli',
-  manifest: '/manifest.json',
 };
 
 export default function RootLayout({

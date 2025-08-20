@@ -12,7 +12,7 @@ export default function Header() {
               </h1>
               <span className="text-sm font-medium text-primary-foreground/80">v1.3.5</span>
             </div>
-            <p className="text-sm text-primary-foreground/80 italic">Simple & fast "Image Compression" tool</p>
+            <p className="text-sm text-primary-foreground/80 italic">Simple & fast &quot;Image Compression&quot; tool</p>
           </div>
           <div className="flex items-center gap-2 [&_button]:bg-transparent [&_button]:border-primary-foreground [&_button]:text-primary-foreground [&_button:hover]:bg-primary-foreground/20 [&_button:hover]:text-primary-foreground">
             <ModeToggle />

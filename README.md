@@ -37,14 +37,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID="G-XXXXXXXXXX"
 NEXT_PUBLIC_FEEDBACK_FORM_URL="https://your-google-form-url"
 ```
 
-## PWA Icons
 
-To ensure your PWA displays correctly on all devices, you'll need to provide icons in various sizes. Place your icon files in the `/public` directory. They are referenced in the `/public/manifest.json` file. It's recommended to have at least the following sizes:
-
--   192x192 pixels
--   512x512 pixels
-
-You can generate these icons from a single source image using an online PWA icon generator.
 
 ## License
 

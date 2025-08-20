@@ -18,22 +18,7 @@ const loadImage = (src) => {
 
 const processWithCanvas = async (file, settings) => {
   try {
-    let imageUrl = await readFileAsDataURL(file);
-
-    // Handle SVG files by converting them to PNG first
-    if (file.type === 'image/svg+xml') {
-      const img = await loadImage(imageUrl);
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) {
-        throw new Error('Could not get canvas context');
-      }
-      ctx.drawImage(img, 0, 0);
-      imageUrl = canvas.toDataURL('image/png');
-    }
-    
+    const imageUrl = await readFileAsDataURL(file);
     const img = await loadImage(imageUrl);
 
     const canvas = document.createElement('canvas');
