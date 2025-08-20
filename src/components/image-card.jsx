@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+
 import {
   Card,
   CardContent,
@@ -114,7 +114,7 @@ export default function ImageCard({
                 {status === 'error' && <div className="text-center text-destructive p-4"><AlertCircle size={32} className="mx-auto mb-2 h-8 w-8" /><p className="text-xs">{error}</p></div>}
                 {(status === 'done' && processed) && (
                 <>
-                    <Image src={processed.dataUrl} alt="Processed" fill style={{ objectFit: 'contain' }} />
+                    <img src={processed.dataUrl} alt="Processed" className="object-contain w-full h-full" />
                     <Badge variant="secondary" className="absolute top-2 right-2">{formatBytes(processed.size)}</Badge>
                 </>
                 )}

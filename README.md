@@ -12,6 +12,7 @@ A simple, light weight, and fast multi-image compression tool. This tool runs en
 -   **Dark/Light Mode**: Includes a sleek, user-friendly interface with a dark and light mode theme.
 -   **Bulk Operations**: Process multiple files at once, with options to download all or clear the queue.
 -   **Google Analytics**: PWA installation events are tracked using Google Analytics.
+-   **Faster Font Loading:** Switched from loading fonts from Google's servers to hosting them directly within the application. This change eliminates a network request and makes the initial page load faster.
 
 ## Tech Stack
 
