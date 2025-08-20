@@ -65,7 +65,7 @@ const processWithCanvas = async (file, settings) => {
 
 const processWithWorker = (file, settings) => {
   return new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('./image-processor.worker.js', import.meta.url));
+    const worker = new Worker('/image-processor.worker.js');
 
     worker.onmessage = (event) => {
       if (event.data.error) {
