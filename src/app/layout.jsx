@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script";
 import './globals.css';
-
+import PWATracker from "@/components/pwa-tracker";
 
 export const metadata = {
   title: 'Image Compressor | by Hikwa Mehluli',
@@ -29,6 +29,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
           >
+            <PWATracker />
             {children}
             <Toaster />
         </ThemeProvider>
