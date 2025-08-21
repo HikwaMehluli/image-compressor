@@ -11,7 +11,7 @@ A simple, light weight, and fast multi-image compression tool. This tool runs en
 -   **PWA with Offline Functionality**: Works without an internet connection after the first visit. The app is installable on your device for easy access.
 -   **Dark/Light Mode**: Includes a sleek, user-friendly interface with a dark and light mode theme.
 -   **Bulk Operations**: Process multiple files at once, with options to download all or clear the queue.
--   **Google Analytics**: PWA installation events are tracked using Google Analytics.
+-   **Google Analytics**: Tracks PWA installation and launch events.
 -   **Faster Font Loading:** Switched from loading fonts from Google's servers to hosting them directly within the application. This change eliminates a network request and makes the initial page load faster.
 
 ## Tech Stack
