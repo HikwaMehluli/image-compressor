@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        
         <meta name="theme-color" content="#0048ce" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
