@@ -63,7 +63,7 @@ export default function FileUploader({ onFilesAdded, disabled }) {
         ref={inputRef}
         type="file"
         multiple
-        accept="image/*"
+        accept="image/jpeg,image/png,image/webp"
         onChange={handleChange}
         className="hidden"
         disabled={disabled}
@@ -72,7 +72,7 @@ export default function FileUploader({ onFilesAdded, disabled }) {
         <UploadCloud size={64} className={cn("w-16 h-16", isDragging ? "text-primary" : "text-muted-foreground")} />
         <p className="text-lg font-semibold text-foreground">Click or drag & drop to upload</p>
         <div className="text-xs text-muted-foreground mt-1 leading-tight">
-          <p>Supported formats: JPG, PNG, WebP, SVG.</p>
+          <p>Supported formats: JPG, PNG, WebP.</p>
           <p>Max 10MB per file.</p>
         </div>
       </div>

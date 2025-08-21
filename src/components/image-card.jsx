@@ -39,7 +39,7 @@ export default function ImageCard({
     error,
   } = file;
 
-  const isOriginalSvg = originalFile.type === 'image/svg+xml';
+  
 
   const savings = originalSize - (processed?.size || 0);
   const changePercentage =
@@ -119,10 +119,7 @@ export default function ImageCard({
                     <Badge variant="secondary" className="absolute top-2 right-2">{formatBytes(processed.size)}</Badge>
                 </>
                 )}
-                 {(status === 'idle' || (status !== 'done' && isOriginalSvg)) && isOriginalSvg && (
-                    <img src={originalUrl} alt="Original SVG Preview" className="object-contain w-full h-full" />
-                )}
-                {status === 'idle' && !isOriginalSvg && <div className="text-muted-foreground text-sm">Waiting to process...</div>}
+                 {status === 'idle' && <div className="text-muted-foreground text-sm">Waiting to process...</div>}
           </div>
            <div className="text-center">
              {renderSavings()}

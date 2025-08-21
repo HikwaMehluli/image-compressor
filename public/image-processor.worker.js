@@ -22,22 +22,26 @@ self.onmessage = async (event) => {
 
     ctx.drawImage(bitmap, 0, 0);
 
-    const blob = await canvas.convertToBlob({
-      type: `image/${settings.format.toLowerCase()}`,
+    const processedMimeType = `image/${settings.format.toLowerCase()}`;
+    const processedBlob = await canvas.convertToBlob({
+      type: processedMimeType,
       quality: settings.format !== 'PNG' ? settings.quality / 100 : undefined,
     });
+
+    let finalBlob = processedBlob;
+    // Safety check: if size increased and format is unchanged, use original file.
+    if (processedBlob.size > file.size && processedMimeType === file.type) {
+      finalBlob = file;
+    }
 
     const dataUrl = await new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result);
       reader.onerror = reject;
-      reader.readAsDataURL(blob);
+      reader.readAsDataURL(finalBlob);
     });
 
-    const head = `data:${blob.type};base64,`;
-    const size = Math.round(((dataUrl.length - head.length) * 3) / 4);
-
-    self.postMessage({ dataUrl, size });
+    self.postMessage({ dataUrl, size: finalBlob.size });
   } catch (error) {
     self.postMessage({ error: error.message });
   }

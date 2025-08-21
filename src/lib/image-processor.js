@@ -41,6 +41,11 @@ const processWithCanvas = async (file, settings) => {
     const head = `data:${mimeType};base64,`;
     const size = Math.round(((dataUrl.length - head.length) * 3) / 4);
 
+    // Safety check: If the new size is larger and the format is the same, return the original.
+    if (size > file.size && mimeType === file.type) {
+      return { dataUrl: imageUrl, size: file.size };
+    }
+
     return { dataUrl, size };
   } catch (error) {
     console.error("Image processing error:", error);
