@@ -23,8 +23,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body className="font-body antialiased">
-        <PwaInstallProvider>
-          <ThemeProvider
+        <ThemeProvider
               attribute="class"
               defaultTheme="system"
               enableSystem
@@ -32,8 +31,7 @@ export default function RootLayout({
           >
             {children}
             <Toaster />
-          </ThemeProvider>
-        </PwaInstallProvider>
+        </ThemeProvider>
         {gaId && (
           <>
             <Script
