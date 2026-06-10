@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+ai
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# Rust (Tauri backend)
+src-tauri/target/
+src-tauri/.cargo/
+src-tauri/Cargo.lock
+
+# Tauri build artifacts
+/src-tauri/bundled/
+/src-tauri/gen/android/app/build
+**/*.dmg
+**/*.app
+**/*.deb
+**/*.rpm
+**/*.msi
+**/*.exe
+**/*.apk
+**/*.aab
+
+# Android signing keys (NEVER commit these)
+**/keystore.properties
+*.jks
+*.keystore
+upload-keystore.jks.base64

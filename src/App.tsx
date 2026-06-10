@@ -1,0 +1,88 @@
+import { useEffect, useRef } from "react";
+import ActionButtons from "./components/action-buttons";
+import CompressedImagesGrid from "./components/compressed-images-grid";
+import DropZone from "./components/drop-zone";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import ImageQualitySlider from "./components/image-quality-slider";
+import LoadingSpinner from "./components/loading-spinner";
+import { ThemeProvider } from "./components/theme-provider";
+import { Toaster } from "./components/ui/sonner";
+import { useImageCompression } from "./hooks/useImageCompression";
+
+function App() {
+	const {
+		compressedImages,
+		zipFile,
+		loading,
+		value,
+		filelist,
+		compressProgress,
+		outputFormat,
+		handleImageUpload,
+		onImageQualityChange,
+		onOutputFormatChange,
+		resetCompression,
+	} = useImageCompression();
+
+	const imageResultRef = useRef<HTMLDivElement>(null);
+
+	// Add scroll effect when compressed images are available
+	useEffect(() => {
+		if (compressedImages.length > 0 && imageResultRef.current) {
+			setTimeout(() => {
+				imageResultRef.current?.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+					inline: "nearest",
+				});
+			}, 300);
+		}
+	}, [compressedImages.length]);
+	return (
+		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+			<div className="flex h-screen flex-col overflow-hidden">
+				<Header />
+				<main className="container mx-auto flex-1 overflow-y-auto px-4">
+					<ImageQualitySlider
+						value={value}
+						onImageQualityChange={onImageQualityChange}
+					/>
+
+					<div
+						className="animate-fadeIn animate-delay-200"
+						ref={imageResultRef}
+					>
+						<DropZone
+							onFilesSelected={handleImageUpload}
+							hasCompressedImages={compressedImages.length > 0}
+						/>
+						<ActionButtons
+							zipFile={zipFile}
+							onReset={resetCompression}
+							hasCompressedImages={compressedImages.length > 0}
+							hasFileList={filelist.length > 0}
+							outputFormat={outputFormat}
+							onOutputFormatChange={onOutputFormatChange}
+						/>
+						{loading ? (
+							<div className="flex flex-col items-center justify-center py-8">
+								<LoadingSpinner
+									compressProgress={compressProgress}
+								/>
+							</div>
+						) : (
+							<CompressedImagesGrid
+								compressedImages={compressedImages}
+							/>
+						)}
+					</div>
+					<Footer />
+					<Toaster />
+				</main>
+			</div>
+		</ThemeProvider>
+	);
+}
+
+export default App;
