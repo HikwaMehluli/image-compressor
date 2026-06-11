@@ -19,7 +19,7 @@ const CompressedImagesGrid = ({
 					No Compressed Images
 				</h3>
 				<p className="max-w-xl text-sm">
-					Upload images and compress them to see your results here. Your compressed images will appear in this section.
+					Upload images and compress them to see your results here.
 				</p>
 			</div>
 		);
