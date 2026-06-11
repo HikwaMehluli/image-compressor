@@ -181,7 +181,7 @@ This project is free and open source under the MIT License - anyone can use, mod
 
 ## 👤 Author
 
-Created with ❤️ by [Hikwam](https://www.github.com/hikwamehluli)
+Created with ❤️ by [HikwaMehluli](https://www.github.com/hikwamehluli)
 
 ## 🤝 Support
 
