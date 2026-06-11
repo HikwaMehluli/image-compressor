@@ -47,12 +47,12 @@ const ImageQualitySlider = ({
 					onChange={onImageQualityChange}
 				/>
 				<div className="mt-1 flex justify-between text-sm">
-					<span className="text-destructive">Low</span>
-					<span className="text-warning">Fair</span>
-					<span className="text-warning">Okay</span>
-					<span className="text-success">Good</span>
-					<span className="text-success">High</span>
-					<span className="text-destructive">Max</span>
+					<span className="text-destructive font-bold">Low</span>
+					<span className="text-warning font-bold">Fair</span>
+					<span className="text-warning font-bold">Okay</span>
+					<span className="text-success font-bold">Good</span>
+					<span className="text-success font-bold">High</span>
+					<span className="text-destructive font-bold">Max</span>
 				</div>
 			</div>
 		</div>
