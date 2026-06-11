@@ -284,3 +284,7 @@ html {
 	background-color: var(--primary);
 	-moz-appearance: none !important;
 }
+
+label:hover {
+	@apply border-blue-500 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/20;
+}
