@@ -38,7 +38,7 @@ const DropZone = ({
 	return (
 		<label
 			ref={dropAreaRef}
-			className={`cursor-pointer relative flex flex-col items-center overflow-hidden rounded-xl border-2 border-dashed p-3 my-8 transition-all duration-200 ease-in-out ${
+			className={`cursor-pointer relative flex flex-col items-center overflow-hidden rounded-xl border-3 border-dashed p-3 my-8 transition-all duration-200 ease-in-out ${
 				isDragActive
 					? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
 					: "border-gray-300 dark:border-gray-600"
