@@ -4,7 +4,7 @@
 
 ## 🌐 Live Demo
 
-Try it out: [https://imgcompzw.netlify.app](https://imgcompzw.netlify.app)
+Try it out: [https://hikwamehluli.github.io/image-compressor](https://hikwamehluli.github.io/image-compressor)
 
 ## 🤔 What Does This App Do?
 
@@ -90,7 +90,7 @@ image-compressor/                 # Main project folder
 ## 🚀 Quick Start Guide
 
 ### For Users (Just Want to Use the Tool)
-1. Visit [https://imgcompzw.netlify.app](https://imgcompzw.netlify.app)
+1. Visit [https://hikwamehluli.github.io/image-compressor](https://hikwamehluli.github.io/image-compressor)
 2. Drag your photos to the box
 3. Adjust the slider to choose compression level
 4. Download your smaller photos!
