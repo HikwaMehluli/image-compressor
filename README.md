@@ -73,11 +73,12 @@ image-compressor/                 # Main project folder
 - **Build Tool**: Vite (makes development fast)
 - **Desktop App**: Tauri (wraps web app for computers)
 - **Styling**: Tailwind CSS (makes everything look good)
+- **AI Tools**: OpenCode — see `AGENTS.md` for agent workflow and conventions
 
 **Privacy & Security:**
 - ✅ All processing happens on YOUR computer
 - ✅ No photos ever leave your device
-- ✅ No internet required for compression
+- ✅ No internet required for compression once page is loaded
 - ✅ Open source (anyone can check the code)
 
 **Performance Features:**
@@ -88,7 +89,7 @@ image-compressor/                 # Main project folder
 
 ## 🚀 Quick Start Guide
 
-### For Users (Just Want to Use It)
+### For Users (Just Want to Use the Tool)
 1. Visit [https://imgcompzw.netlify.app](https://imgcompzw.netlify.app)
 2. Drag your photos to the box
 3. Adjust the slider to choose compression level
@@ -98,7 +99,7 @@ image-compressor/                 # Main project folder
 
 #### Prerequisites
 - Node.js version `20+` and `npm` installed
-- For desktop app: Rust toolchain installed
+- For desktop apps: Rust toolchain installed
 
 #### Installation Steps
 ```bash
@@ -146,6 +147,11 @@ npm run format       # Fix code formatting
 - **🔒 Super Private**: Photos never leave your device
 - **⚡ Super Fast**: Processes happen instantly on your device
 - **🖥️ Also a Desktop App**: Install on your computer too
+
+## 🤖 GitHub Actions
+
+- **Web deploy** (`.github/workflows/main.yml`): Auto-builds and deploys to GitHub Pages on every push to `master`.
+- **Desktop release** (`.github/workflows/desktop-release.yml`): Manually triggered — builds Tauri installers for Windows, macOS (Intel + ARM), and Linux, then uploads them to a GitHub Release.
 
 ## 🛠️ For Developers Who Want to Contribute
 

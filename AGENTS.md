@@ -37,9 +37,15 @@ npm run tauri:android   # tauri android dev
 - Fast Rust-only validation: `cargo check` in `src-tauri/` (avoids full frontend build + bundling)
 - If changing bundle identifier in `tauri.conf.json`, delete `src-tauri/gen/android/` and re-run `npx tauri android init`
 
-## CI/CD (`.github/workflows/main.yml`)
+## CI/CD
 
-Triggers on push to `master`. Four matrix jobs for desktop (Linux deb+AppImage, Windows nsis+msi, macOS Intel+ARM dmg), one Android job (signed APK split-per-abi), and optional web deploy to GitHub Pages. Android signing requires repo secrets: `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD`, `ANDROID_KEY_BASE64`.
+### `.github/workflows/main.yml` — Web deploy to GitHub Pages
+
+Triggers on push to `master` + `workflow_dispatch`. Builds the Vite SPA and deploys to GitHub Pages. The Vite `base` is conditionally set to `/image-compressor/` in CI via `GITHUB_ACTIONS` env var.
+
+### `.github/workflows/desktop-release.yml` — Desktop release
+
+Manual trigger only (`workflow_dispatch`). Matrix across `[ubuntu-latest, windows-latest, macos-13, macos-latest]`. Uses `tauri-apps/tauri-action@v2` with `includeRelease: true` to build and upload installers to a GitHub Release. Sets `VITE_BASE_PATH=/` so the frontend builds with root base for desktop.
 
 ## TypeScript
 
