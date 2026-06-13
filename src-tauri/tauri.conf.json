@@ -1,7 +1,7 @@
 {
 	"$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
 	"productName": "Image Compressor",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"identifier": "com.hikwamehluli.imagecompressor",
 	"build": {
 		"frontendDist": "../dist",
@@ -13,8 +13,8 @@
 		"windows": [
 			{
 				"title": "image-compressor",
-				"width": 1200,
-				"height": 800,
+				"width": 900,
+				"height": 600,
 				"resizable": true,
 				"fullscreen": false
 			}
